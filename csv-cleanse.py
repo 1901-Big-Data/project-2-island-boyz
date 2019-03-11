@@ -14,7 +14,6 @@ def cleanse():
             num = str(num).replace('[\'', '')
             num = str(num).replace('\']', '')
             line = re.sub('\s\d+,\d+\s', str(num), line)
-            #print(num)
             out.write(line)
     out.close()
 
