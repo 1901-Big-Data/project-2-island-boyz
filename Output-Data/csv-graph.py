@@ -12,15 +12,26 @@ def gold_gdp():
         for line in file:
             country, gdp, gold = line.split(',')
             c_list.append(country)
-            gdp_list.append(gdp)
-            g_m_list.append(gold)
-    
-    plt.bar(c_list, g_m_list)
-    plt.xticks(c_list, rotation='65')
-    plt.yticks(g_m_list)
+            gdp_list.append(float(gdp))
+            g_m_list.append(int(gold))
+    '''
+    plt.bar(range(len(c_list)), g_m_list, align='center')
+    plt.xticks(range(len(c_list)), c_list, rotation='90')
     plt.ylabel("Medals")
     plt.xlabel("Countries")
-    plt.title("Countries GDP per capita\nand Gold medals")
+    plt.title("Gold medals per country")
+    plt.show()
+    
+    plt.bar(range(len(c_list)), gdp_list, align='center')
+    plt.xticks(range(len(c_list)), c_list, rotation='90')
+    plt.ylabel("GDP per capita")
+    plt.xlabel("Countries")
+    plt.title("GDP per capita by country")
+    '''
+
+    plt.xcorr(g_m_list, gdp_list)
+
+
     plt.show()
 
 if __name__ == "__main__":
