@@ -1,0 +1,9 @@
+---------------------------
+Sqoop Jobs
+---------------------------
+sqoop job --create athlete_exp -- export --connect jdbc:mysql://localhost/olympic --username ryan -P --table athlete --input-fields-terminated-by ',' --export-dir /user/olympics/athlete -m 1
+
+sqoop job --create country_exp -- export --connect jdbc:mysql://localhost/olympic --username ryan -P --table countries --input-fields-terminated-by ',' --export-dir /user/olympics/countries -m 1
+
+sqoop job --create athlete_imp -- import --connect jdbc:mysql://localhost/olympic --username ryan -P --table athlete --hive-database olympics --hive-import -m 1
+sqoop job --create country_imp -- import --connect jdbc:mysql://localhost/olympic --username ryan -P --table countries --hive-database olympics --hive-import -m 1
