@@ -1,0 +1,62 @@
+<workflow-app name="oozie-olympics" xmlns="uri:oozie:workflow:0.4">
+
+<!--Start the testing-->
+<start to="olympics-create" />
+
+<!--If I am going to add another job here that produces output
+	need to make sure that the output file is cleaned/ready to go
+	E.g. when doing imports straight to file and not to hive
+
+	prepare>
+		<delete path="output/oozie-job"/>
+	</prepare>
+
+Also need to make sure to put this xml file where
+ever the location is specified within the job.properties file
+-->
+
+<action name="olympics-create">
+	<hive xmlns="uri:oozie:hive-action:0.4">
+		<job-tracker>${job_tracker}</job-tracker>
+		<name-node>${name_node}</name-node>
+
+		<!--set connection to hive metastore-->
+		<configuration>
+                	<property>
+                		<name>hive.metastore.uris</name>
+                		<value>thrift://localhost:9083</value>
+                	</property>
+		</configuration>
+		<script>${scripts_location}/o_create.sql</script>
+	</hive>
+	
+	<ok to="queryOne" />
+	<error to="kill" />
+</action>
+
+<action name="queryOne">
+	<hive xmlns="uri:oozie:hive-action:0.4">
+		<job-tracker>${job_tracker}</job-tracker>
+		<name-node>${name_node}</name-node>
+		<!-- Set up connection to the actual Hive Metastore -->
+		<configuration>
+			<property>
+			<name>hive.metastore.uris</name>
+			<value>thrift://localhost:9083</value>
+			</property>
+		</configuration>
+		<script>${scripts_location}/o_Q1.sql</script>
+	</hive>
+
+        <ok to="end" />
+        <error to="kill" />
+</action>
+
+	<!-- Kill job control node -->
+	<kill name="kill">
+        <message>Oozie job terminated with errors.</message>
+	</kill>
+
+	<!-- End job control node -->
+	<end name="end" />
+</workflow-app>
