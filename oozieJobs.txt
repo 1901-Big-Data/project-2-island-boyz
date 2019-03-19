@@ -1,0 +1,7 @@
+---------------------------
+Oozie Jobs
+---------------------------
+oozie job -oozie http://quickstart.cloudera:11000/oozie -D oozie.wf.application.path workflow.xml -config job.properties -run
+
+workflow.xml should be in /user/cloudera/
+job.properties should be in home/cloudera

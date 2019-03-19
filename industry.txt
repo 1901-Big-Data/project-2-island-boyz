@@ -1,0 +1,89 @@
+country,industry,gold_medals
+Algeria,0.6,5
+Argentina,0.358,70
+Armenia,0.343,2
+Australia,0.262,261
+Austria,0.304,55
+Azerbaijan,0.457,7
+Bahrain,0.387,1
+Belarus,0.316,24
+Belgium,0.24,8
+Brazil,0.4,100
+Bulgaria,0.304,33
+Burundi,0.203,1
+Cameroon,0.17,20
+Canada,0.294,303
+Chile,0.493,3
+China,0.473,308
+Colombia,0.342,5
+Costa Rica,0.299,1
+Cote d'Ivoire,0.171,1
+Croatia,0.308,58
+Cuba,0.261,149
+Czech Republic,0.393,42
+Denmark,0.246,92
+Dominican Republic,0.306,3
+Ecuador,0.312,1
+Egypt,0.357,1
+Estonia,0.294,7
+Ethiopia,0.099,19
+Fiji,0.135,13
+Finland,0.295,43
+France,0.214,216
+Georgia,0.275,8
+Germany,0.296,425
+Greece,0.213,22
+Grenada,0.18,1
+Hong Kong,0.092,1
+Hungary,0.312,139
+India,0.276,17
+Indonesia,0.458,7
+Iran,0.424,14
+Ireland,0.46,5
+Israel,0.317,1
+Italy,0.291,203
+Jamaica,0.337,31
+Japan,0.258,109
+Jordan,0.287,1
+Kazakhstan,0.386,20
+Kenya,0.188,26
+Latvia,0.261,3
+Liechtenstein,0.39,2
+Lithuania,0.325,6
+Mexico,0.259,21
+Mongolia,0.214,2
+Morocco,0.357,6
+Mozambique,0.348,1
+Netherlands,0.244,199
+New Zealand,0.273,48
+Nigeria,0.487,23
+Norway,0.415,158
+Pakistan,0.251,16
+Panama,0.156,1
+Poland,0.311,44
+Portugal,0.274,4
+Puerto Rico,0.45,1
+Romania,0.35,137
+Russia,0.371,365
+Serbia,0.255,15
+Singapore,0.339,1
+Slovakia,0.294,15
+Slovenia,0.369,8
+South Africa,0.303,15
+Spain,0.295,102
+Suriname,0.22,1
+Sweden,0.282,118
+Switzerland,0.34,55
+Syria,0.23,1
+Tajikistan,0.286,1
+Thailand,0.441,9
+Tunisia,0.318,2
+Turkey,0.298,17
+Uganda,0.222,1
+Ukraine,0.452,47
+United Arab Emirates,0.585,1
+United States,0.204,1257
+Uzbekistan,0.229,10
+Venezuela,0.419,1
+Vietnam,0.41,1
+Zimbabwe,0.243,17

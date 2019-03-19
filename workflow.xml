@@ -1,0 +1,315 @@
+<workflow-app name="oozie-olympics" xmlns="uri:oozie:workflow:0.4">
+
+<!--Start the testing-->
+<start to="queryOne" />
+
+<!--If I am going to add another job here that produces output
+	need to make sure that the output file is cleaned/ready to go
+	E.g. when doing imports straight to file and not to hive
+
+	prepare>
+		<delete path="output/oozie-job"/>
+	</prepare>
+
+Also need to make sure to put this xml file where
+ever the location is specified within the job.properties file
+-->
+
+<!--
+<action name="olympics-create">
+	<hive xmlns="uri:oozie:hive-action:0.4">
+		<job-tracker>${job_tracker}</job-tracker>
+		<name-node>${name_node}</name-node>
+
+		<configuration>
+                	<property>
+                		<name>hive.metastore.uris</name>
+                		<value>thrift://localhost:9083</value>
+                	</property>
+		</configuration>
+		<script>${scripts_location}/o_create.sql</script>
+	</hive>
+	
+	<ok to="queryOne" />
+	<error to="kill" />
+</action>
+-->
+
+<action name="queryOne">
+	<hive xmlns="uri:oozie:hive-action:0.4">
+		<job-tracker>${job_tracker}</job-tracker>
+		<name-node>${name_node}</name-node>
+		<prepare>
+			<delete path="/user/cloudera/olympicOutput/q1" />
+			<mkdir path="/user/cloudera/olympicOutput/q1" />
+		</prepare>
+		<!-- Set up connection to the actual Hive Metastore -->
+		<configuration>
+			<property>
+			<name>hive.metastore.uris</name>
+			<value>thrift://localhost:9083</value>
+			</property>
+			<property>
+				<name>oozie.launcher.mapreduce.map.java.opts</name>
+				<value>-verbose</value>
+			</property>
+		</configuration>
+
+		<script>${scripts_location}/o_Q1.sql</script>
+	</hive>
+
+        <ok to="queryTwo" />
+        <error to="kill" />
+</action>
+
+<action name="queryTwo">
+	<hive xmlns="uri:oozie:hive-action:0.4">
+		<job-tracker>${job_tracker}</job-tracker>
+		<name-node>${name_node}</name-node>
+		<prepare>
+			<delete path="/user/cloudera/olympicOutput/q2" />
+			<mkdir path="/user/cloudera/olympicOutput/q2" />
+		</prepare>
+		<!-- Set up connection to the actual Hive Metastore -->
+		<configuration>
+			<property>
+			<name>hive.metastore.uris</name>
+			<value>thrift://localhost:9083</value>
+			</property>
+			<property>
+				<name>oozie.launcher.mapreduce.map.java.opts</name>
+				<value>-verbose</value>
+			</property>
+		</configuration>
+
+		<script>${scripts_location}/o_Q2.sql</script>
+	</hive>
+
+        <ok to="queryThree" />
+        <error to="kill" />
+</action>
+
+<action name="queryThree">
+	<hive xmlns="uri:oozie:hive-action:0.4">
+		<job-tracker>${job_tracker}</job-tracker>
+		<name-node>${name_node}</name-node>
+		<prepare>
+			<delete path="/user/cloudera/olympicOutput/q3" />
+			<mkdir path="/user/cloudera/olympicOutput/q3" />
+		</prepare>
+		<!-- Set up connection to the actual Hive Metastore -->
+		<configuration>
+			<property>
+			<name>hive.metastore.uris</name>
+			<value>thrift://localhost:9083</value>
+			</property>
+			<property>
+				<name>oozie.launcher.mapreduce.map.java.opts</name>
+				<value>-verbose</value>
+			</property>
+		</configuration>
+
+		<script>${scripts_location}/o_Q3.sql</script>
+	</hive>
+
+        <ok to="queryFour" />
+        <error to="kill" />
+</action>
+
+<action name="queryFour">
+	<hive xmlns="uri:oozie:hive-action:0.4">
+		<job-tracker>${job_tracker}</job-tracker>
+		<name-node>${name_node}</name-node>
+		<prepare>
+			<delete path="/user/cloudera/olympicOutput/q4" />
+			<mkdir path="/user/cloudera/olympicOutput/q4" />
+		</prepare>
+		<!-- Set up connection to the actual Hive Metastore -->
+		<configuration>
+			<property>
+			<name>hive.metastore.uris</name>
+			<value>thrift://localhost:9083</value>
+			</property>
+			<property>
+				<name>oozie.launcher.mapreduce.map.java.opts</name>
+				<value>-verbose</value>
+			</property>
+		</configuration>
+
+		<script>${scripts_location}/o_Q4.sql</script>
+	</hive>
+
+        <ok to="queryFive" />
+        <error to="kill" />
+</action>
+
+<action name="queryFive">
+	<hive xmlns="uri:oozie:hive-action:0.4">
+		<job-tracker>${job_tracker}</job-tracker>
+		<name-node>${name_node}</name-node>
+		<prepare>
+			<delete path="/user/cloudera/olympicOutput/q5" />
+			<mkdir path="/user/cloudera/olympicOutput/q5" />
+		</prepare>
+		<!-- Set up connection to the actual Hive Metastore -->
+		<configuration>
+			<property>
+			<name>hive.metastore.uris</name>
+			<value>thrift://localhost:9083</value>
+			</property>
+			<property>
+				<name>oozie.launcher.mapreduce.map.java.opts</name>
+				<value>-verbose</value>
+			</property>
+		</configuration>
+
+		<script>${scripts_location}/o_Q5.sql</script>
+	</hive>
+
+        <ok to="querySix" />
+        <error to="kill" />
+</action>
+
+<action name="querySix">
+	<hive xmlns="uri:oozie:hive-action:0.4">
+		<job-tracker>${job_tracker}</job-tracker>
+		<name-node>${name_node}</name-node>
+		<prepare>
+			<delete path="/user/cloudera/olympicOutput/q6" />
+			<mkdir path="/user/cloudera/olympicOutput/q6" />
+		</prepare>
+		<!-- Set up connection to the actual Hive Metastore -->
+		<configuration>
+			<property>
+			<name>hive.metastore.uris</name>
+			<value>thrift://localhost:9083</value>
+			</property>
+			<property>
+				<name>oozie.launcher.mapreduce.map.java.opts</name>
+				<value>-verbose</value>
+			</property>
+		</configuration>
+
+		<script>${scripts_location}/o_Q6.sql</script>
+	</hive>
+
+        <ok to="querySeven" />
+        <error to="kill" />
+</action>
+
+<action name="querySeven">
+	<hive xmlns="uri:oozie:hive-action:0.4">
+		<job-tracker>${job_tracker}</job-tracker>
+		<name-node>${name_node}</name-node>
+		<prepare>
+			<delete path="/user/cloudera/olympicOutput/q7" />
+			<mkdir path="/user/cloudera/olympicOutput/q7" />
+		</prepare>
+		<!-- Set up connection to the actual Hive Metastore -->
+		<configuration>
+			<property>
+			<name>hive.metastore.uris</name>
+			<value>thrift://localhost:9083</value>
+			</property>
+			<property>
+				<name>oozie.launcher.mapreduce.map.java.opts</name>
+				<value>-verbose</value>
+			</property>
+		</configuration>
+
+		<script>${scripts_location}/o_Q7.sql</script>
+	</hive>
+
+        <ok to="queryEight" />
+        <error to="kill" />
+</action>
+
+<action name="queryEight">
+	<hive xmlns="uri:oozie:hive-action:0.4">
+		<job-tracker>${job_tracker}</job-tracker>
+		<name-node>${name_node}</name-node>
+		<prepare>
+			<delete path="/user/cloudera/olympicOutput/q8" />
+			<mkdir path="/user/cloudera/olympicOutput/q8" />
+		</prepare>
+		<!-- Set up connection to the actual Hive Metastore -->
+		<configuration>
+			<property>
+			<name>hive.metastore.uris</name>
+			<value>thrift://localhost:9083</value>
+			</property>
+			<property>
+				<name>oozie.launcher.mapreduce.map.java.opts</name>
+				<value>-verbose</value>
+			</property>
+		</configuration>
+
+		<script>${scripts_location}/o_Q8.sql</script>
+	</hive>
+
+        <ok to="queryNine" />
+        <error to="kill" />
+</action>
+
+<action name="queryNine">
+	<hive xmlns="uri:oozie:hive-action:0.4">
+		<job-tracker>${job_tracker}</job-tracker>
+		<name-node>${name_node}</name-node>
+		<prepare>
+			<delete path="/user/cloudera/olympicOutput/q9" />
+			<mkdir path="/user/cloudera/olympicOutput/q9" />
+		</prepare>
+		<!-- Set up connection to the actual Hive Metastore -->
+		<configuration>
+			<property>
+			<name>hive.metastore.uris</name>
+			<value>thrift://localhost:9083</value>
+			</property>
+			<property>
+				<name>oozie.launcher.mapreduce.map.java.opts</name>
+				<value>-verbose</value>
+			</property>
+		</configuration>
+
+		<script>${scripts_location}/o_Q9.sql</script>
+	</hive>
+
+        <ok to="queryTen" />
+        <error to="kill" />
+</action>
+
+<action name="queryTen">
+	<hive xmlns="uri:oozie:hive-action:0.4">
+		<job-tracker>${job_tracker}</job-tracker>
+		<name-node>${name_node}</name-node>
+		<prepare>
+			<delete path="/user/cloudera/olympicOutput/q10" />
+			<mkdir path="/user/cloudera/olympicOutput/q10" />
+		</prepare>
+		<!-- Set up connection to the actual Hive Metastore -->
+		<configuration>
+			<property>
+			<name>hive.metastore.uris</name>
+			<value>thrift://localhost:9083</value>
+			</property>
+			<property>
+				<name>oozie.launcher.mapreduce.map.java.opts</name>
+				<value>-verbose</value>
+			</property>
+		</configuration>
+
+		<script>${scripts_location}/o_Q10.sql</script>
+	</hive>
+
+        <ok to="end" />
+        <error to="kill" />
+</action>
+
+	<!-- Kill job control node -->
+	<kill name="kill">
+        <message>Oozie job terminated with errors.</message>
+	</kill>
+
+	<!-- End job control node -->
+	<end name="end" />
+</workflow-app>
