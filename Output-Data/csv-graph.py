@@ -2,10 +2,10 @@
 from matplotlib import pyplot as plt
 
 def main():
-    #gold_gdp()
-    #gold_pop()
-    #medals_pop()
-    #medals_gdp()
+    gold_gdp()
+    gold_pop()
+    medals_pop()
+    medals_gdp()
     medals_lit()
 
 def gold_gdp():
@@ -30,8 +30,9 @@ def gold_gdp():
     plt.ylabel("GDP per capita")
     plt.xlabel("Countries")
     plt.title("GDP per capita by country")
+    plt.show()
 
-    #plt.xcorr(g_m_list, gdp_list)
+    plt.xcorr(g_m_list, gdp_list)
     plt.show()
 
 def gold_pop():
@@ -56,8 +57,9 @@ def gold_pop():
     plt.ylabel("Population")
     plt.xlabel("Countries")
     plt.title("Popluation by country")
+    plt.show()
 
-    #plt.xcorr(g_m_list, pop_list)
+    plt.xcorr(g_m_list, pop_list)
     plt.show()
 
 def medals_pop():
@@ -82,8 +84,9 @@ def medals_pop():
     plt.ylabel("Population")
     plt.xlabel("Countries")
     plt.title("Popluation by country")
+    plt.show()
 
-    #plt.xcorr(g_m_list, pop_list)
+    plt.xcorr(g_m_list, pop_list)
     plt.show()
 
 def medals_gdp():
@@ -108,8 +111,9 @@ def medals_gdp():
     plt.ylabel("GDP per capita")
     plt.xlabel("Countries")
     plt.title("GDP per capita by country")
+    plt.show()
 
-    #plt.xcorr(g_m_list, gdp_list)
+    plt.xcorr(g_m_list, gdp_list)
     plt.show()
 
 def medals_lit():
@@ -134,8 +138,9 @@ def medals_lit():
     plt.ylabel("GDP per capita")
     plt.xlabel("Countries")
     plt.title("Literacy by country")
+    plt.show()
 
-    #plt.xcorr(g_m_list, gdp_list)
+    plt.xcorr(g_m_list, lit_list)
     plt.show()
 
 if __name__ == "__main__":
