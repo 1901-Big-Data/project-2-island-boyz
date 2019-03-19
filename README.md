@@ -25,3 +25,9 @@ Maybe want to compare total medals vs just gold medals
 4. What can a country to do get more medals?
 5. Higher medals in general, not just gold
 6. Country with the most medals vs country with the lowest medals
+
+## Links
+
+https://www.kaggle.com/fernandol/countries-of-the-world
+https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results
+
